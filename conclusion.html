@@ -221,6 +221,8 @@ padding-top:20px;
 
 width:100%;
 
+flex-shrink:0;
+
 }
 
 @media(max-width:700px){
@@ -264,6 +266,7 @@ text-align:center;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -312,8 +315,25 @@ Back to Beginning
 
 <script>
 
+window.addEventListener(
+"DOMContentLoaded",
+()=>{
+
 fetch("footer.html")
-.then(response=>response.text())
+.then(response=>{
+
+if(!response.ok){
+
+throw new Error(
+"Footer failed"
+);
+
+}
+
+return response.text();
+
+})
+
 .then(data=>{
 
 document.getElementById(
@@ -321,11 +341,14 @@ document.getElementById(
 ).innerHTML=data;
 
 })
+
 .catch(error=>{
 
 console.log(
 "Footer not loaded"
 );
+
+});
 
 });
 
