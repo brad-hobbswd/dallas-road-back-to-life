@@ -43,7 +43,7 @@ linear-gradient(
 #2d1f17
 );
 
-min-height:100vh;
+min-height:100dvh;
 
 padding:35px;
 
@@ -51,7 +51,9 @@ display:flex;
 
 justify-content:center;
 
-align-items:center;
+align-items:flex-start;
+
+color:var(--text);
 
 }
 
@@ -68,11 +70,18 @@ padding:80px;
 border-radius:22px;
 
 box-shadow:
-0 25px 60px rgba(0,0,0,.45);
+0 25px 60px rgba(
+0,
+0,
+0,
+.45
+);
 
 position:relative;
 
 overflow:hidden;
+
+margin:40px 0;
 
 }
 
@@ -114,7 +123,12 @@ height:300px;
 border-radius:50%;
 
 background:
-rgba(247,180,63,.06);
+rgba(
+247,
+180,
+63,
+.06
+);
 
 }
 
@@ -203,17 +217,51 @@ translateY(-3px);
 
 }
 
+#footer{
+
+margin-top:60px;
+
+padding-top:20px;
+
+width:100%;
+
+}
+
 @media(max-width:700px){
+
+body{
+
+padding:18px;
+
+}
 
 .book{
 
 padding:45px 30px;
+
+margin:20px 0;
 
 }
 
 h1{
 
 font-size:2.2rem;
+
+margin-bottom:35px;
+
+}
+
+.pageNav{
+
+justify-content:center;
+
+}
+
+.pageNav a{
+
+width:100%;
+
+text-align:center;
 
 }
 
@@ -262,8 +310,9 @@ Next →
 
 </div>
 
-</div>
 <div id="footer"></div>
+
+</div>
 
 <script>
 
@@ -275,8 +324,16 @@ document.getElementById(
 "footer"
 ).innerHTML=data;
 
+})
+.catch(error=>{
+
+console.log(
+"Footer not loaded"
+);
+
 });
 
 </script>
+
 </body>
 </html>
