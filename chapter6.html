@@ -44,13 +44,15 @@ linear-gradient(
 
 padding:35px;
 
-min-height:100vh;
+min-height:100dvh;
 
 display:flex;
 
 justify-content:center;
 
-align-items:center;
+align-items:flex-start;
+
+color:var(--text);
 
 }
 
@@ -66,11 +68,18 @@ padding:80px;
 border-radius:22px;
 
 box-shadow:
-0 25px 60px rgba(0,0,0,.45);
+0 25px 60px rgba(
+0,
+0,
+0,
+.45
+);
 
 position:relative;
 
 overflow:hidden;
+
+margin:40px 0;
 
 }
 
@@ -183,19 +192,66 @@ color:white;
 
 font-weight:bold;
 
+transition:.3s;
+
+}
+
+.pageNav a:hover{
+
+transform:
+translateY(-3px);
+
+}
+
+#footer{
+
+margin-top:60px;
+
+padding-top:20px;
+
+width:100%;
+
 }
 
 @media(max-width:700px){
 
+body{
+
+padding:18px;
+
+}
+
 .book{
 
 padding:45px 30px;
+
+margin:20px 0;
 
 }
 
 h1{
 
 font-size:2.2rem;
+
+}
+
+.subtitle{
+
+margin-bottom:40px;
+
+}
+
+.pageNav{
+
+justify-content:center;
+
+}
+
+.pageNav a{
+
+width:100%;
+
+text-align:center;
 
 }
 
@@ -229,7 +285,11 @@ The town below looked the same, yet Dallas felt profoundly different. He no long
 </p>
 
 <p>
-As he walked through familiar streets, he noticed her. Noelle.
+As he walked through familiar streets, he noticed her.
+</p>
+
+<p>
+Noelle.
 </p>
 
 <p>
@@ -238,7 +298,9 @@ She was helping at the small community center, her hair catching in the morning 
 
 <p>
 Continue placing the remaining Chapter Six text exactly from your manuscript through:
+</p>
 
+<p>
 "With Noelle by his side, Dallas knew that love, faith, and purpose could truly transform a life."
 </p>
 
@@ -254,8 +316,9 @@ Next →
 
 </div>
 
-</div>
 <div id="footer"></div>
+
+</div>
 
 <script>
 
@@ -267,8 +330,16 @@ document.getElementById(
 "footer"
 ).innerHTML=data;
 
+})
+.catch(error=>{
+
+console.log(
+"Footer not loaded"
+);
+
 });
 
 </script>
+
 </body>
 </html>
