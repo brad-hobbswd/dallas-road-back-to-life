@@ -77,7 +77,13 @@ linear-gradient(
 #1d140f
 );
 
-border-top:1px solid rgba(255,255,255,.08);
+border-top:
+1px solid rgba(
+255,
+255,
+255,
+.08
+);
 
 padding:70px 30px;
 
@@ -149,9 +155,13 @@ margin:auto;
 
 line-height:2;
 
-opacity:.9;
+color:#f4ede5;
+
+opacity:1;
 
 margin-bottom:40px;
+
+padding:0 15px;
 
 }
 
@@ -177,6 +187,8 @@ color:#fffaf2;
 
 transition:.3s;
 
+font-size:1rem;
+
 }
 
 .footerLinks a:hover{
@@ -189,19 +201,55 @@ color:#f7b43f;
 
 font-size:.95rem;
 
-opacity:.75;
+color:#e9e1d6;
 
-line-height:1.9;
+opacity:1;
+
+line-height:2;
+
+padding:0 15px;
 
 }
 
 @media(max-width:700px){
+
+footer{
+
+padding:60px 25px;
+
+}
+
+.footerTop h3{
+
+font-size:1.8rem;
+
+}
+
+.footerTop p{
+
+font-size:1rem;
+
+}
+
+.footerMiddle p{
+
+font-size:1rem;
+
+line-height:1.8;
+
+}
 
 .footerLinks{
 
 gap:15px;
 
 flex-direction:column;
+
+}
+
+.footerBottom{
+
+font-size:.9rem;
 
 }
 
