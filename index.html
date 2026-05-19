@@ -94,7 +94,9 @@ box-shadow:
 
 display:flex;
 
-align-items:flex-end;
+flex-direction:column;
+
+justify-content:flex-end;
 
 padding:70px;
 
@@ -228,11 +230,7 @@ scale(1.02);
 
 .author{
 
-position:absolute;
-
-right:40px;
-
-bottom:30px;
+margin-top:35px;
 
 letter-spacing:3px;
 
@@ -250,6 +248,8 @@ padding-top:20px;
 
 width:100%;
 
+flex-shrink:0;
+
 }
 
 @media(max-width:700px){
@@ -266,8 +266,6 @@ padding:25px;
 
 min-height:auto;
 
-align-items:flex-start;
-
 margin:0;
 
 }
@@ -281,14 +279,6 @@ width:100%;
 }
 
 .author{
-
-position:relative;
-
-right:auto;
-
-bottom:auto;
-
-margin-top:35px;
 
 text-align:center;
 
@@ -344,16 +334,33 @@ Begin Reading
 Bradley Hobbs
 </div>
 
-<div id="footer"></div>
-
 </div>
+
+<div id="footer"></div>
 
 </div>
 
 <script>
 
+window.addEventListener(
+"DOMContentLoaded",
+()=>{
+
 fetch("footer.html")
-.then(response=>response.text())
+.then(response=>{
+
+if(!response.ok){
+
+throw new Error(
+"Footer failed"
+);
+
+}
+
+return response.text();
+
+})
+
 .then(data=>{
 
 document.getElementById(
@@ -361,11 +368,14 @@ document.getElementById(
 ).innerHTML=data;
 
 })
+
 .catch(error=>{
 
 console.log(
 "Footer not loaded"
 );
+
+});
 
 });
 
