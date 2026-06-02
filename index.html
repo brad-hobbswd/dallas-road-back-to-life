@@ -57,27 +57,18 @@ color:white;
 .hero{
 
 width:100%;
-max-width:1500px;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-gap:60px;
-
-padding:60px;
+max-width:1300px;
 
 background:
-rgba(
-7,
-19,
-29,
-.65
+linear-gradient(
+180deg,
+#001325,
+#00101c
 );
 
 border-radius:30px;
+
+padding:50px;
 
 box-shadow:
 0 25px 70px rgba(
@@ -86,6 +77,8 @@ box-shadow:
 0,
 .5
 );
+
+margin:25px auto;
 
 }
 
@@ -122,26 +115,45 @@ box-shadow:
 );
 
 }
-  
+
+.book-banner{
+
+display:block;
+
+width:100%;
+
+max-width:1000px;
+
+height:auto;
+
+margin:0 auto 40px;
+
+border-radius:20px;
+
+box-shadow:
+0 20px 50px rgba(
+0,
+0,
+0,
+.45
+);
+
+}
+
+
 .content{
 
-flex:.8;
+max-width:850px;
 
-max-width:560px;
+margin:0 auto;
 
 background:
 rgba(
 7,
 19,
 29,
-.82
+.72
 );
-
--webkit-backdrop-filter:
-blur(6px);
-
-backdrop-filter:
-blur(6px);
 
 padding:40px;
 
@@ -347,13 +359,10 @@ text-align:center;
 
 <div class="hero">
 
-<div class="banner">
-
 <img
 src="bookbannerdallas.png"
-alt="Dallas and the Road Back to Life">
-
-</div>
+alt="Dallas and the Road Back to Life"
+class="book-banner">
 
 <div class="content">
 
