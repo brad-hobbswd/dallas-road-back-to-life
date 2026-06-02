@@ -47,10 +47,8 @@ min-height:100dvh;
 padding:25px;
 
 display:flex;
-
-justify-content:center;
-
-align-items:flex-start;
+flex-direction:column;
+align-items:center;
 
 color:white;
 
@@ -59,30 +57,27 @@ color:white;
 .hero{
 
 width:100%;
-max-width:1300px;
+max-width:1500px;
 
-min-height:92dvh;
+display:flex;
 
-border-radius:30px;
+align-items:center;
 
-overflow:hidden;
+justify-content:center;
 
-position:relative;
+gap:60px;
 
-background-color:#111;
+padding:60px;
 
 background:
+rgba(
+7,
+19,
+29,
+.65
+);
 
-linear-gradient(
-rgba(0,0,0,.25),
-rgba(0,0,0,.75)
-),
-
-url("bookbannerdallas.png");
-
-background-size:cover;
-
-background-position:center;
+border-radius:30px;
 
 box-shadow:
 0 25px 70px rgba(
@@ -92,28 +87,54 @@ box-shadow:
 .5
 );
 
+}
+
+.banner{
+
+flex:1.4;
+
 display:flex;
 
-flex-direction:column;
+justify-content:center;
 
-justify-content:flex-end;
-
-padding:70px;
-
-margin:25px 0;
+align-items:center;
 
 }
 
+.banner img{
+
+width:100%;
+
+max-width:800px;
+
+height:auto;
+
+display:block;
+
+border-radius:20px;
+
+box-shadow:
+0 25px 70px rgba(
+0,
+0,
+0,
+.55
+);
+
+}
+  
 .content{
 
-max-width:720px;
+flex:.8;
+
+max-width:560px;
 
 background:
 rgba(
 7,
 19,
 29,
-.72
+.82
 );
 
 -webkit-backdrop-filter:
@@ -153,11 +174,10 @@ margin-bottom:20px;
 h1{
 
 font-size:
-
 clamp(
-3.8rem,
-8vw,
-7rem
+3rem,
+6vw,
+5.5rem
 );
 
 line-height:.95;
@@ -169,10 +189,9 @@ margin-bottom:15px;
 .subtitle{
 
 font-size:
-
 clamp(
-1.3rem,
-3vw,
+1.2rem,
+2.5vw,
 2rem
 );
 
@@ -207,7 +226,6 @@ text-decoration:none;
 font-weight:bold;
 
 background:
-
 linear-gradient(
 45deg,
 var(--sunset),
@@ -240,21 +258,59 @@ font-size:1rem;
 
 }
 
+#footer{
+
+width:100%;
+
+max-width:1500px;
+
+margin-top:25px;
+
+}
+
+@media(max-width:1000px){
+
+.hero{
+
+flex-direction:column;
+
+padding:35px;
+
+gap:35px;
+
+}
+
+.banner{
+
+width:100%;
+
+}
+
+.banner img{
+
+max-width:100%;
+
+}
+
+.content{
+
+max-width:100%;
+
+}
+
+}
+
 @media(max-width:700px){
 
 body{
 
-padding:18px;
+padding:15px;
 
 }
 
 .hero{
 
-padding:25px;
-
-min-height:auto;
-
-margin:0;
+padding:20px;
 
 }
 
@@ -262,7 +318,17 @@ margin:0;
 
 padding:25px;
 
-width:100%;
+}
+
+h1{
+
+font-size:3rem;
+
+}
+
+.subtitle{
+
+font-size:1.3rem;
 
 }
 
@@ -273,7 +339,6 @@ text-align:center;
 }
 
 }
-
 </style>
 
 </head>
@@ -281,6 +346,14 @@ text-align:center;
 <body>
 
 <div class="hero">
+
+<div class="banner">
+
+<img
+src="bookbannerdallas.png"
+alt="Dallas and the Road Back to Life">
+
+</div>
 
 <div class="content">
 
